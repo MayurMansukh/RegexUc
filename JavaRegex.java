@@ -1,21 +1,20 @@
-  
 package util;
 import java.util.regex.*;
 
 class JavaRegex {
 
-    public static boolean isValidPhoneNo(String name)
+    public static boolean isValidPassword(String Password)
     {
-        String regex = "^[0-9]+\\s[0-9{10}]+$";
+        String regex = "^[A-Za-z]{8}$";
 
 
         Pattern p = Pattern.compile(regex);
 
-        if (name == null) {
+        if (Password == null) {
             return false;
         }
 
-        Matcher m = p.matcher(name);
+        Matcher m = p.matcher(Password);
         return m.matches();
     }
 
@@ -23,15 +22,15 @@ class JavaRegex {
     public static void main(String[] args)
     {
 
-        String str1 = "91 99787564 ";
-        System.out.println(isValidPhoneNo(str1));
+        String str1 = "PASSWORDD";
+        System.out.println(isValidPassword(str1));
 
 
-        String str3 = "9199785645";
-        System.out.println(isValidPhoneNo(str3));
+        String str3 = "1password";
+        System.out.println(isValidPassword(str3));
 
 
-        String str5 = "91 9967435678";
-        System.out.println(isValidPhoneNo(str5));
+        String str5 = "passWord";
+        System.out.println(isValidPassword(str5));
     }
 }
