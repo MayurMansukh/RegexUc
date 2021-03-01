@@ -3,9 +3,9 @@ import java.util.regex.*;
 
 class JavaRegex {
 
-    public static boolean isValidFirstnameLastName(String name)
+    public static boolean isValidEmail(String name)
     {
-        String regex = "^([A-Za-z]{3})+\\s([A-Za-z]{3})$";
+        String regex = "^[a-z+.-]+@[a-z+.-]+$";
 
 
         Pattern p = Pattern.compile(regex);
@@ -22,15 +22,12 @@ class JavaRegex {
     public static void main(String[] args)
     {
 
-        String str1 = "Mayur Mansukh ";
-        System.out.println(isValidFirstname(str1));
+
+        String str1 = "abc.xyz@ab.co";
+        System.out.println(isValidEmail(str1));
 
 
-        String str3 = "May+Man";
-        System.out.println(isValidFirstname(str3));
-
-
-        String str5 = "May Man";
-        System.out.println(isValidFirstname(str5));
+        String str2 = "abc.@ab.co.";
+        System.out.println(isValidEmail(str2));
     }
 }
