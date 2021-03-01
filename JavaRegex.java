@@ -3,9 +3,10 @@ import java.util.regex.*;
 
 class JavaRegex {
 
-    public static boolean isValidUsername(String name)
+    public static boolean isValidFirstnameLastName(String name)
     {
-        String regex = "^[A-Za-z]{3}$";
+        String regex = "^([A-Za-z]{3})+\\s([A-Za-z]{3})$";
+
 
         Pattern p = Pattern.compile(regex);
 
@@ -21,15 +22,15 @@ class JavaRegex {
     public static void main(String[] args)
     {
 
-        String str1 = "Mansukh";
-        System.out.println(isValidUsername(str1));
-
-        
-        String str3 = "1MayurMansukh";
-        System.out.println(isValidUsername(str3));
+        String str1 = "Mayur Mansukh ";
+        System.out.println(isValidFirstname(str1));
 
 
-        String str5 = "May";
-        System.out.println(isValidUsername(str5));
+        String str3 = "May+Man";
+        System.out.println(isValidFirstname(str3));
+
+
+        String str5 = "May Man";
+        System.out.println(isValidFirstname(str5));
     }
 }
