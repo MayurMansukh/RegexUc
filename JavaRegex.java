@@ -5,7 +5,7 @@ class JavaRegex {
 
     public static boolean isValidPassword(String Password)
     {
-        String regex = "^(?=.*[0-9])(?=.*[A-Z]).{8}$";
+        String regex = "^(?=.*[0-9])(?=.*[A-Z])(?=.*[*.!@$%^&].{8}$";
 
 
         Pattern p = Pattern.compile(regex);
@@ -22,11 +22,11 @@ class JavaRegex {
     public static void main(String[] args)
     {
 
-        String str1 = "PASSWORD";
+        String str1 = "P@SSWORD";
         System.out.println(isValidPassword(str1));
 
 
-        String str3 = "password";
+        String str3 = "P1ss$ord";
         System.out.println(isValidPassword(str3));
 
 
